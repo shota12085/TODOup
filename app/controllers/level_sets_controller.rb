@@ -1,7 +1,7 @@
 class LevelSetsController < ApplicationController
 
   def create
-    @level = LevelSets.create(level_params)
+    @level = LevelSet.create(level_params)
   end
 
   private

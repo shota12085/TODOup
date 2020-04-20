@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users
   resources :events, only: [:create, :destroy]
   resources :acquisitions, only: [:create, :destroy]
-
+  resources :level_sets, only: :create
 
 end
