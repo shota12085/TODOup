@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def index
     @event = Event.new
     @acquisition = Acquisition.new
+    @set = LevelSet.new
     @events = current_user.events
     @success = current_user.acquisitions
     @acquisitions = current_user.acquisitions.count
