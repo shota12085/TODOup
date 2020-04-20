@@ -1,0 +1,89 @@
+.task-content1
+  .blackboard-box
+    %p ToDo
+    .chalk1
+    .chalk2
+  - @todo.each do |event|
+    .event{ "data-event-id": "#{event.id}" }
+      .event-page
+        .event-tape
+        .event__content
+          .event__content--date
+            = event.date
+          .event__content--content
+            = event.content
+          .event__content--menu
+            .event__content--delete
+              = link_to "削除", event_path(event), method: :delete
+            .event__form
+              = form_with model: @acquisition,local: true,class: "success-form" do |f|
+                = f.date_field :date, value: event.date,class: "form__success"
+                = f.text_field :task, value: event.task,class: "form__success"
+                = f.text_field :content,class: "form__success", value: event.content
+                = f.submit "完了",class: "success-btn",id: "success-btn","data-event-id": event.id 
+                
+.task-content2
+  .blackboard-box
+    %p 日課
+    .chalk1
+    .chalk2
+  - @day.each do |event|
+    .event#event{data: {event: {id: event.id}}}
+      .event-page
+        .event-tape
+        .event__content
+          .event__content--date
+            = event.date
+          .event__content--content
+            = event.content
+          .event__content--menu
+            .event__content--delete
+              = link_to "削除", event_path(event), method: :delete
+            .event__form
+              = form_with model: @acquisition,local: true, class: "success-form" do |f|
+                = f.date_field :date, value: event.date,class: "form__success"
+                = f.text_field :task, value: event.task,class: "form__success"
+                = f.text_field :content,class: "form__success", value: event.content
+                = f.submit "完了",class: "success-btn",id: "success-btn" ,"data-event-id": event.id
+.task-content3
+  .blackboard-box
+    %p 習慣
+    .chalk1
+    .chalk2
+  - @must.each do |event|
+    .event{ "data-event-id": "#{event.id}" }
+      .event-page
+        .event-tape
+        .event__content
+          .event__content--date
+            = event.date
+          .event__content--content
+            = event.content
+          .event__content--menu3
+            .event__content--delete
+              = link_to "削除", event_path(event), method: :delete
+            -# .event__form
+            -#   = form_with model: @acquisition,local: true, class: "success-form" do |f|
+            -#     = f.date_field :date, value: event.date,class: "form__success"
+            -#     = f.text_field :task, value: event.task,class: "form__success"
+            -#     = f.text_field :content,class: "form__success", value: event.content
+            -#     = f.submit "完了",class: "success-btn"
+
+
+.task-content4
+  .blackboard-box
+    %p 完了タスク
+    .chalk1
+    .chalk2
+  - @dayTodo.each do |event|
+    .event{ "data-event-id": "#{event.id}" }
+      .event-page
+        .event-tape
+        .event__content
+          .event__content--date
+            = "完了日 #{event.date}"
+          .event__content--content
+            = event.content
+          .event__content--menu3
+            .event__content--delete
+              = link_to "削除", acquisition_path(event), method: :delete

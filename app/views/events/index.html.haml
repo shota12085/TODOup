@@ -1,0 +1,46 @@
+.wrapper
+  .main-content
+    .user
+      .user__name
+        = current_user.name
+      .user__level
+        = "ユーザーLevel" 
+        %span= level
+      .user__next
+        - if @thresold == @acquisitions
+          = "タスクを残り\n#{@thresolds}回\n達成すれば次のレベルに上がります。"
+        - else
+          = "タスクを残り\n#{@thresold}回\n達成すれば次のレベルに上がります。"
+      %input#btn{type: "button", value: "今日の運勢"}
+        %p PUSH!!
+      #unnsei
+      #result
+    - if @thresold_in == current_user.ex_point && current_user.level != 1
+      .user__levelup
+        = image_tag "/assets/congratulations.jpg",class: "user__image"
+        .user__message
+          %h3= current_user.name
+          %h4 Congratulations!!
+          %h5= "レベルが#{level}に上がりました"
+          %button.user__back back 
+          
+          
+    .form
+      = form_with model: @event,local: true,class: "form__new" do |f|
+        %p ToDo 作成
+        = f.label :日付,class: "form__label"
+        = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"),class: "form__date"
+        = f.label :カテゴリ,class: "form__label"
+        = f.select :task, [["ToDo"],["日課"],["習慣"]],class: "form__task"
+        = f.label :詳細,class: "form__label"
+        = f.text_field :content,class: "form__text"
+        = f.submit "登録",class: "create-btn"
+  .day-progress
+    = Date.today.strftime('%-m月%d日') + "の進捗率"
+    %span= "#{@levels.round(1)}%"
+  .progress
+    #level-bar.progress-bar.progress-bar-striped.progress-bar-animated{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
+      = "#{@levels.round(1)}%"
+  .task
+    = render "task"
+

@@ -1,0 +1,48 @@
+.show-main
+  .search
+    %h4.lunking-top ランキング
+    = link_to user_path(current_user) do
+      %h4.all-task 達成タスク(ALLタスク)
+    %h4 達成タスク検索
+    .search-day
+      - @events.keys.each.with_index(0) do |event, day|
+        .search-day__day{id: "#{day}"}
+          = event 
+  
+  .lunking
+    .lunking__main
+      %h4 ランキング
+      .user-lunking1
+        .user-lunk1 順位
+        .user-lunk__name1 Name
+        .user-lunk__level1 Level
+        .user-lunk__ex_point タスク完了
+      - @users.each.with_index(1) do |user, i|
+        .user-lunking
+          .user-lunk
+            = "#{i}位"
+          .user-lunk__name
+            = user.name
+          .user-lunk__level
+            = user.level
+          .user-lunk__ex_point
+            = user.ex_point
+      
+  .event-main
+    %h4 達成タスク
+    .event-content
+      - @events.each do |key, event|
+        .event-day
+          = key
+        - event.each do |event|
+          .event-content__events
+            .event-content__task
+              =event.task
+            .event-content__content
+              =event.content
+
+
+   
+
+
+

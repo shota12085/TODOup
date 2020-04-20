@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title TODOup
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = include_gon
+    = javascript_include_tag 'application', media: 'all'
+    
+  %body
+    - if user_signed_in? 
+      .header
+        .header-left
+          =link_to root_path do
+            %h2 ToDoUp
+        .header-right
+          .header-show
+            = link_to "達成タスク/ランキング",user_path(current_user) 
+          .logout
+            = link_to "ログアウト",destroy_user_session_path, method: :delete 
+        
+    = yield

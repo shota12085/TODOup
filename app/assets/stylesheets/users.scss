@@ -1,0 +1,213 @@
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  .title{
+    background-image: url(./memo1.jpg);
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: 50px;
+    color: #ffffff;
+    background-color: #ddd;
+    .title-content{
+      width: 650px;
+      margin: auto;
+    }
+    &__name{
+      margin-top: 100px;
+      text-align: center;
+    }
+    &__content{
+      margin: 50px 0;
+    }
+    h1{
+      font-size: 50px;
+    }
+    h2{
+      margin: 50px 0;
+    }
+  }
+
+  .login-form{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    &__top{
+      width: 400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    &__top h2{
+      margin: 20px;
+    }
+    form{
+      font-size: 18px;
+    }
+    input{
+      width: 100%;
+
+    }
+    .field{
+      margin: 20px;
+    }
+    .field-btn{
+      margin: 20px;
+      width: 100px;
+      background-color: gold;
+    }
+    a{
+      margin: 20px;
+      font-size: 20px;
+    }
+  }
+}
+
+
+
+
+
+.field-level{
+  display: none;
+}
+.show-main{
+  display: flex;
+  padding-top: 60px;
+  background-color: #FFFDE7;
+	background-size: 80px 80px;
+	background-image:
+	 linear-gradient(rgba(215,204,200,.7) 1%, rgba(215,204,200,.7) 1%, transparent 1%,
+	  transparent 99%, rgba(215,204,200,.7) 99%, rgba(215,204,200,.7) 100%),
+	 linear-gradient(90deg, rgba(215,204,200,.7) 1%, rgba(215,204,200,.7) 1%, transparent 1%,
+	  transparent 99%, rgba(215,204,200,.7) 99%, rgba(215,204,200,.7) 100%),
+	 linear-gradient(transparent, transparent 25%, rgba(215,204,200,.4) 25%, rgba(215,204,200,.4) 26%, transparent 26%,
+	  transparent 50%, rgba(215,204,200,.4) 50%, rgba(215,204,200,.4) 51%, transparent 51%,
+	  transparent 75%, rgba(215,204,200,.4) 75%, rgba(215,204,200,.4) 76%, transparent 76%, transparent 100%),
+	 linear-gradient(90deg, transparent, transparent 25%, rgba(215,204,200,.4) 25%, rgba(215,204,200,.4) 26%, transparent 26%,
+	  transparent 50%, rgba(215,204,200,.4) 50%, rgba(215,204,200,.4) 51%, transparent 51%,
+	  transparent 75%, rgba(215,204,200,.4) 75%, rgba(215,204,200,.4) 76%, transparent 76%, transparent 100%);
+  .search{
+    width: 300px;
+    height: calc(100vh - 60px);
+    border-right: 2px solid black;
+    overflow: scroll;
+    h4{
+      margin: 20px 20px 20px 40px;
+      font-size: 20px;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .all-task:hover{
+      opacity: 0.6;
+    }
+    .lunking-top{
+      margin-top: 40px;
+      cursor: pointer;
+    }
+    .lunking-top:hover{
+      opacity: 0.6;
+    }
+    .search-day{
+      margin: 10px;
+      text-align: center;
+      &__day{
+        margin: 10px;
+        cursor: pointer;
+      }
+      &__day:hover{
+        opacity: 0.6;
+      }
+    }
+  }
+  .lunking{
+    display: none;
+    width: calc(100vw - 300px);
+    &__main{
+      width: 800px;
+      margin: 0 auto;
+      margin-top: 40px;
+      padding: 20px;
+      overflow: scroll;
+      background-color: #fffff9;
+      border: 5px solid #e6b422; 
+      border-radius: 3px; 
+      box-shadow: 0 0 8px #333, 0 0 2px #555 inset;
+    }
+    h4{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .user-lunking,.user-lunking1{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #aaa;
+    }
+    .user-lunking1{
+      border: none;
+    }
+    .user-lunk,.user-lunk1{
+      width: 15%;
+      padding: 10px;
+      &__name,&__name1{
+        width: 40%;
+        border-right: 1px solid #aaa;
+        border-left: 1px solid #aaa;
+        padding: 10px;
+      }
+      &__name1{
+        border: none;
+      }
+      &__level,&__level1{
+        width: 15%;
+        border-right: 1px solid #aaa;
+        padding: 10px;
+      }
+      &__level1{
+        border: none;
+      }
+      &__ex_point{
+        width: 30%;
+        padding: 10px;
+      }
+    }
+  }
+  .event-main{
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 50px;
+    overflow: scroll;
+    h4{
+      text-align: center;
+    }
+    .event-content{
+      margin-top: 20px;
+      .event-day{
+        padding: 20px;
+        font-size: 18px;
+      }
+      &__events{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        background-color: #fffff9;
+        border: 5px solid #e6b422; 
+        border-radius: 3px; 
+        box-shadow: 0 0 8px #333, 0 0 2px #555 inset;
+      }
+      &__task{
+        width: 20%;
+        padding: 20px 30px;
+      }
+      &__content{
+        width: 80%;
+        padding: 20px;
+      }
+    }
+  }
+}
